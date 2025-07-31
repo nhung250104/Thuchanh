@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bàn cờ vua</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .label {
+      background-color: orange;
+      font-weight: bold;
+    }
+
+    .black {
+      background-color: black;
+    }
+
+    .white {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <!-- Hàng tiêu đề -->
+  <tr>
+    <th class="label"></th>
+    <th class="label">1</th>
+    <th class="label">2</th>
+    <th class="label">3</th>
+    <th class="label">4</th>
+    <th class="label">5</th>
+    <th class="label">6</th>
+    <th class="label">7</th>
+    <th class="label">8</th>
+  </tr>
+
+  <!-- Các hàng từ A đến H -->
+  <!-- Mỗi hàng bắt đầu bằng chữ cái, sau đó là 8 ô cờ -->
+  <!-- Dùng công thức (row + col) % 2 === 0 để xen kẽ ô trắng và đen -->
+
+  <!-- Hàng A -->
+  <tr>
+    <th class="label">A</th>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+  </tr>
+
+  <!-- Hàng B -->
+  <tr>
+    <th class="label">B</th>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+  </tr>
+
+  <!-- Hàng C -->
+  <tr>
+    <th class="label">C</th>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+  </tr>
+
+  <!-- Hàng D -->
+  <tr>
+    <th class="label">D</th>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+  </tr>
+
+  <!-- Hàng E -->
+  <tr>
+    <th class="label">E</th>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+  </tr>
+
+  <!-- Hàng F -->
+  <tr>
+    <th class="label">F</th>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+  </tr>
+
+  <!-- Hàng G -->
+  <tr>
+    <th class="label">G</th>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+    <td class="white"></td><td class="black"></td><td class="white"></td><td class="black"></td>
+  </tr>
+
+  <!-- Hàng H -->
+  <tr>
+    <th class="label">H</th>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+    <td class="black"></td><td class="white"></td><td class="black"></td><td class="white"></td>
+  </tr>
+</table>
+
+</body>
+</html>
