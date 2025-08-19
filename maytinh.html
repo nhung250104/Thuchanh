@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    input {
+      margin: 5px;
+      padding: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 7px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ddd;
+    }
+    button:hover {
+      background-color: #bbb;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calculator</h2>
+
+  <input type="number" id="num1" placeholder="Nhập số thứ nhất">
+  <input type="number" id="num2" placeholder="Nhập số thứ hai">
+  <br>
+
+  <button onclick="calculate('+')">Addition(+)</button>
+  <button onclick="calculate('-')">Subtraction(-)</button>
+  <button onclick="calculate('*')">Multiplication(X)</button>
+  <button onclick="calculate('/')">Division(/)</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculate(operator) {
+      let num1 = Number(document.getElementById("num1").value);
+      let num2 = Number(document.getElementById("num2").value);
+      let result;
+
+      if (operator === '+') {
+        result = num1 + num2;
+      } else if (operator === '-') {
+        result = num1 - num2;
+      } else if (operator === '*') {
+        result = num1 * num2;
+      } else if (operator === '/') {
+        if (num2 === 0) {
+          result = "Không thể chia cho 0";
+        } else {
+          result = num1 / num2;
+        }
+      }
+
+      document.getElementById("result").innerHTML = "Result " + operator + " : " + result;
+    }
+  </script>
+</body>
+</html>
