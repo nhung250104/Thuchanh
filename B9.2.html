@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra cạnh của tam giác</title>
+</head>
+<body>
+    <h3>Kiểm tra cạnh của tam giác</h3>
+<script>
+    let a = parseFloat(prompt("Nhập cạnh a của tam giác:"));
+    let b = parseFloat(prompt("Nhập cạnh b của tam giác:"));
+    let c = parseFloat(prompt("Nhập cạnh c của tam giác:"));
+    if (!isNaN(a) && !isNaN(b) && !isNaN(c) && a > 0 && b > 0 && c > 0) {
+        if (a + b > c && a + c > b && b + c > a) {
+            document.write("Ba cạnh này có thể tạo thành một tam giác.");
+        } else {
+            document.write("Ba cạnh này không thể tạo thành một tam giác.");
+        }
+    } else {
+        document.write("Vui lòng nhập các cạnh hợp lệ lớn hơn 0.");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <h2>Tính thuế thu nhập cá nhân</h2>
+    
+    <script>
+        let income = parseFloat(prompt("Nhập thu nhập hàng tháng (VNĐ):"));
+        
+        if (!isNaN(income) && income > 0) {
+            let tax;
+            if (income <= 5000000) {
+                tax = 0; // Không phải nộp thuế
+            } else if (income <= 10000000) {
+                tax = (income - 5000000) * 0.05; // 5% cho phần trên 5 triệu
+            } else if (income <= 18000000) {
+                tax = (income - 10000000) * 0.1 + 250000; // 10% cho phần trên 10 triệu cộng với thuế của phần trước đó
+            } else {
+                tax = (income - 18000000) * 0.15 + 950000; // 15% cho phần trên 18 triệu cộng với thuế của phần trước đó
+            }
+            document.write("Thuế thu nhập cá nhân phải nộp là: " + tax.toFixed(2) + " VNĐ");
+        } else {
+            document.write("Vui lòng nhập thu nhập hợp lệ lớn hơn 0.");
+        }
+    </script>
+</body>
+</html>

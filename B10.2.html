@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giá điện</title>
+</head>
+<body>
+    <h3>Tính giá điện</h3>
+    <script>
+        let kWh = parseFloat(prompt("Nhập số điện tiêu thụ (kWh):"));
+        if (!isNaN(kWh) && kWh >= 0) {
+            let price;
+            if (kWh <= 50) {
+                price = kWh * 1678;
+            } else if (kWh <= 100) {
+                price = 50 * 1678 + (kWh - 50) * 1734;
+            } else if (kWh <= 200) {
+                price = 50 * 1678 + 50 * 1734 + (kWh - 100) * 2014;
+            } else if (kWh <= 300) {
+                price = 50 * 1678 + 50 * 1734 + 100 * 2014 + (kWh - 200) * 2536;
+            } else {
+                price = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (kWh - 300) * 2834;
+            }
+            document.write("Số tiền điện phải trả là: " + price.toFixed(2) + " VND");
+        } else {
+            document.write("Vui lòng nhập số điện hợp lệ lớn hơn hoặc bằng 0.");
+        }
+    </script>
+</body>
+</html>
