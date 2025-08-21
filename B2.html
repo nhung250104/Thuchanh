@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra điều kiện vào lớp 10</title>
+</head>
+<body>
+    <h3>Bài 2: Kiểm tra vào lớp 10</h3>
+<script>
+    let age = parseInt(prompt("Nhập tuổi học sinh:"));
+    if (!isNaN(age) && age > 0) {
+        if (age >= 15) {
+            document.write("Đủ điều kiện vào lớp 10");
+        } else {
+            document.write("Không đủ điều kiện vào lớp 10");
+        }
+    } else {
+        document.write(" Vui lòng nhập số tuổi hợp lệ");
+    }
+</script>
+
+</body>
+</html>

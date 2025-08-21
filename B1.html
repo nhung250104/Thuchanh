@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiem tra chia het</title>
+</head>
+<body>
+    <h3>Bài 1: Kiểm tra chia hết</h3>
+<script>
+    let a = parseInt(prompt("Nhập số a:"));
+    let b = parseInt(prompt("Nhập số b:"));
+    if (!isNaN(a) && !isNaN(b) && b !== 0) {
+        if (a % b === 0) {
+            document.write("a chia hết cho b<br>");
+        } else {
+            document.write("a không chia hết cho b");
+        }
+    } else {
+        document.write("Vui lòng nhập số nguyên và b ≠ 0");
+    }
+</script>
+
+</body>
+</html>

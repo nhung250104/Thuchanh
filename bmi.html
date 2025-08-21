@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số BMI</title>
+</head>
+<body>
+    <h2>Tính chỉ số BMI</h2>
+    
+    <script>
+        let weight = parseFloat(prompt("Nhập cân nặng (kg):"));
+        let height = parseFloat(prompt("Nhập chiều cao (m):"));
+
+        if (!isNaN(weight) && !isNaN(height) && weight > 0 && height > 0) {
+            let bmi = weight / (height * height);
+
+            document.write("Chỉ số BMI của bạn là: " + bmi.toFixed(2) + "<br>");
+
+            if (bmi < 18.5) {
+                document.write("Phân loại: Underweight (Gầy)");
+            } else if (bmi < 25) {
+                document.write("Phân loại: Normal (Bình thường)");
+            } else if (bmi < 30) {
+                document.write("Phân loại: Overweight (Thừa cân)");
+            } else {
+                document.write("Phân loại: Obese (Béo phì)");
+            }
+        } else {
+            document.write("⚠️ Vui lòng nhập cân nặng và chiều cao là số hợp lệ và lớn hơn 0!");
+        }
+    </script>
+</body>
+</html>

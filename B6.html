@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+    <h3>Bài 6: Tính hoa hồng</h3>
+<script>
+    let sales = parseFloat(prompt("Nhập doanh số bán hàng (triệu đồng):"));
+    if (!isNaN(sales) && sales >= 0) {
+        let rate = 0;
+        if (sales >= 100) rate = 0.1;
+        else if (sales >= 50) rate = 0.05;
+        else rate = 0.02;
+
+        let commission = sales * rate;
+        document.write("Hoa hồng nhận được: " + commission.toFixed(2) + " triệu đồng");
+    } else {
+        document.write("Vui lòng nhập doanh số hợp lệ");
+    }
+</script>
+
+</body>
+</html>

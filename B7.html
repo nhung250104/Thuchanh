@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại học lực</title>
+</head>
+<body>
+    <h3>Bài 5: Xếp loại học lực</h3>
+<script>
+    let test = parseFloat(prompt("Nhập điểm kiểm tra:"));
+    let mid = parseFloat(prompt("Nhập điểm giữa kỳ:"));
+    let final = parseFloat(prompt("Nhập điểm cuối kỳ:"));
+
+    if (!isNaN(test) && !isNaN(mid) && !isNaN(final)) {
+        let avg = (test + mid + final) / 3;
+        let grade = "";
+
+        if (avg >= 8) grade = "Giỏi";
+        else if (avg >= 6.5) grade = "Khá";
+        else if (avg >= 5) grade = "Trung bình";
+        else grade = "Yếu";
+
+        document.write("Điểm trung bình: " + avg.toFixed(2));
+        document.write("Xếp loại: " + grade);
+    } else {
+        document.write("Vui lòng nhập điểm hợp lệ");
+    }
+</script>
+
+</body>
+</html>

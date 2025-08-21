@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+    <h3>Bài 7: Tính cước điện thoại</h3>
+<script>
+    let minutes = parseInt(prompt("Nhập số phút gọi:"));
+    if (!isNaN(minutes) && minutes > 0) {
+        let cost = 0;
+        if (minutes <= 50) {
+            cost = minutes * 600;
+        } else if (minutes <= 100) {
+            cost = 50 * 600 + (minutes - 50) * 400;
+        } else {
+            cost = 50 * 600 + 50 * 400 + (minutes - 100) * 200;
+        }
+        document.write("Cước điện thoại: " + cost + " đồng");
+    } else {
+        document.write(" Vui lòng nhập số phút hợp lệ");
+    }
+</script>
+
+</body>
+</html>

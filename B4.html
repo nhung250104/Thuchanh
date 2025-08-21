@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số lớn nhất trong 3 số</title>
+</head>
+<body>
+    <h3>Bài 4: Số lớn nhất</h3>
+<script>
+    let x = parseInt(prompt("Nhập số thứ nhất:"));
+    let y = parseInt(prompt("Nhập số thứ hai:"));
+    let z = parseInt(prompt("Nhập số thứ ba:"));
+
+    if (!isNaN(x) && !isNaN(y) && !isNaN(z)) {
+        let max = x;
+        if (y > max) max = y;
+        if (z > max) max = z;
+        document.write("Số lớn nhất là: " + max );
+    } else {
+        document.write(" Vui lòng nhập cả 3 số nguyên");
+    }
+</script>
+
+</body>
+</html>
