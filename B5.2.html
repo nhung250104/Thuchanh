@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích tam giác vuông</title>
+</head>
+<body>
+    <h3>Bài 5: Tính diện tích tam giác vuông</h3>
+<script>
+    let base = parseFloat(prompt("Nhập độ dài đáy của tam giác vuông:"));
+    let height = parseFloat(prompt("Nhập chiều cao của tam giác vuông:"));
+
+    if (!isNaN(base) && !isNaN(height) && base > 0 && height > 0) {
+        let area = (base * height) / 2;
+        document.write("Diện tích tam giác vuông là: " + area);
+    } else {
+        document.write("Vui lòng nhập độ dài đáy và chiều cao hợp lệ lớn hơn 0");
+    }
+</script>
+</body>
+</html>
