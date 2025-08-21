@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diện tích hình chữ nhật</title>
+</head>
+<body>
+    <h3>Bài 4: Tính diện tích hình chữ nhật</h3>
+<script>
+    let length = parseFloat(prompt("Nhập chiều dài hình chữ nhật:"));
+    let width = parseFloat(prompt("Nhập chiều rộng hình chữ nhật:"));
+
+    if (!isNaN(length) && !isNaN(width) && length > 0 && width > 0) {
+        let area = length * width;
+        document.write("Diện tích hình chữ nhật là: " + area);
+    } else {
+        document.write("Vui lòng nhập chiều dài và chiều rộng hợp lệ lớn hơn 0");
+    }
+</script>
+</body>
+</html>
