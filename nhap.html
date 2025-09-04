@@ -1,24 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Kiểm tra điểm</title>
 </head>
 <body>
-    <ul>
-        <li>VietNam</li>
-            <ol>
-                <li>HaNoi</li>
-                <li>HoChiMinh</li>
-                <li>DaNang</li>
-            </ol>
+  <h2>Nhập điểm thi cuối module</h2>
 
-        <li>TrungQuoc</li>
-            <ol>
-                <li>ThuongHai</li>
-                <li>BacKinh</li>
-            </ol>
-    </ul>
+  <input type="number" id="score" placeholder="Nhập điểm..." min="0" max="100">
+  <button onclick="checkScore()">Kiểm tra</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkScore() {
+      let score = parseFloat(prompt("score"));
+        if (score >= 75) {
+            document.write("pass module");
+        if (score < 75) {
+            document.write("fail module");
+      }
+    }
+  </script>
 </body>
 </html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra ngày trong tuần</title>
+</head>
+<body>
+  <h2>Nhập số (1 → 7) để kiểm tra ngày</h2>
+
+  <input type="number" id="day" placeholder="Nhập số...">
+  <button onclick="checkDay()">Kiểm tra</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkDay() {
+      let day = Number(document.getElementById("day").value);
+      let result = "";
+
+      if (day === 1) {
+        result = "Chủ nhật";
+      } else if (day === 2) {
+        result = "Thứ hai";
+      } else if (day === 3) {
+        result = "Thứ ba";
+      } else if (day === 4) {
+        result = "Thứ tư";
+      } else if (day === 5) {
+        result = "Thứ năm";
+      } else if (day === 6) {
+        result = "Thứ sáu";
+      } else if (day === 7) {
+        result = "Thứ bảy";
+      } else {
+        result = "Không phải ngày trong tuần!";
+      }
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
+
+function checkDaysInMonth() {
+  let month = parseInt(prompt("Nhập tháng (1-12):"));
+
+  if (isNaN(month) || month < 1 || month > 12) {
+    document.write("Tháng không hợp lệ!");
+  } else if (month === 2) {
+    document.write("Tháng 2 có 28 hoặc 29 ngày (năm nhuận).");
+  } else if ([4, 6, 9, 11].includes(month)) {
+    document.write("Tháng " + month + " có 30 ngày.");
+  } else {
+    document.write("Tháng " + month + " có 31 ngày.");
+  }
+}

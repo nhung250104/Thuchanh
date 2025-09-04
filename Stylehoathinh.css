@@ -89,7 +89,6 @@ footer {
   .container {
     flex-direction: column;
   }
-
   .left-content,
   .right-content {
     padding: 0;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lãi ngân hàng</title>
+</head>
+<body>
+    <h3>Nhập số tiền đầu vào</h3>
+    <script>
+        let principal = parseFloat(prompt("Nhập số tiền đầu vào (VNĐ):"));
+        let rate = parseFloat(prompt("Nhập lãi suất hàng tháng (%):"));
+        let time = parseFloat(prompt("Nhập thời gian gửi (năm):")); 
+        if (!isNaN(principal) && !isNaN(rate) && !isNaN(time) && principal > 0 && rate > 0 && time > 0) {
+            let interest = principal * (rate / 100) * time;
+            document.write("Lãi suất ngân hàng bạn sẽ nhận được là: " + interest.toFixed(2) + " VNĐ");
+        } else {
+            document.write("Vui lòng nhập các giá trị hợp lệ lớn hơn 0.");
+        }
+    </script>
+</body>
+</html>
