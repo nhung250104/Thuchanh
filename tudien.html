@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Từ điển Anh - Việt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      color: #333;
+    }
+    input, button {
+      padding: 8px;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h2>📖 Từ điển Anh - Việt</h2>
+  
+  <label for="word">Nhập từ tiếng Anh:</label><br>
+  <input type="text" id="word" placeholder="Nhập từ cần tra...">
+  <button onclick="translateWord()">Dịch</button>
+  
+  <div id="result"></div>
+  
+  <script>
+    // Mảng lưu trữ từ vựng
+    let eng = ["hello", "book", "computer", "school", "love"];
+    let vie = ["xin chào", "quyển sách", "máy tính", "trường học", "tình yêu"];
+
+    function translateWord() {
+      let input = document.getElementById("word").value.toLowerCase(); // đưa về chữ thường
+      let result = "Không tìm thấy";
+
+      // duyệt mảng tiếng Anh để tìm từ
+      for (let i = 0; i < eng.length; i++) {
+        if (eng[i] === input) {
+          result = vie[i]; // lấy nghĩa tiếng Việt tương ứng
+          break;
+        }
+      }
+
+      // hiển thị kết quả
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>

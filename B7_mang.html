@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr7 = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+let V7 = 7;
+let index7 = -1;
+
+// Tìm vị trí của V
+for (let i = 0; i < arr7.length; i++) {
+  if (arr7[i] === V7) {
+    index7 = i;
+    break;
+  }
+}
+
+if (index7 !== -1) {
+  // Dịch các phần tử về trái
+  for (let i = index7; i < arr7.length - 1; i++) {
+    arr7[i] = arr7[i + 1];
+  }
+  arr7[arr7.length - 1] = 0; // phần tử cuối = 0
+  console.log("Bài 7: Sau khi xóa " + V7 + " => " + arr7);
+} else {
+  console.log("Bài 7: " + V7 + " không thuộc mảng");
+}
+
+    </script>
+</body>
+</html>

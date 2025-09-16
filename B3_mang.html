@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr3 = [12, 7, 20, 5, 18, 25];
+
+let max3 = arr3[0];
+let sum3 = 0;
+
+for (let i = 0; i < arr3.length; i++) {
+  if (arr3[i] > max3) {
+    max3 = arr3[i];
+  }
+  sum3 += arr3[i];
+}
+
+let avg3 = sum3 / arr3.length;
+
+console.log("Bài 3: Giá trị lớn nhất = " + max3);
+console.log("Giá trị trung bình = " + avg3);
+
+    </script>
+</body>
+</html>

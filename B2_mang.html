@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr2 = [3, 17, 25, 9, 14, 28, 11, 6, 19, 22];
+
+let maxVal = arr2[0];
+let maxIndex = 0;
+
+for (let i = 1; i < arr2.length; i++) {
+  if (arr2[i] > maxVal) {
+    maxVal = arr2[i];
+    maxIndex = i;
+  }
+}
+
+console.log("Bài 2: Giá trị lớn nhất là " + maxVal + " tại vị trí " + maxIndex);
+
+    </script>
+</body>
+</html>
