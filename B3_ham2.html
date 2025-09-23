@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 1</title>
+    <script>
+        function giaiThua(n) {
+    if (n < 0) return undefined; 
+    if (n === 0) return 1;
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+// Kiểm tra
+console.log("Giai thừa của 5:", giaiThua(5));
+    </script>
+</head>
+<body>
+    <button onclick="alertMessage()">Gọi hàm</button>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bài 1</title>
+    <script>
+        function demKyTu(arr, ch) {
+    let count = arr.filter(c => c === ch).length;
+    return count > 0 ? count : -1;
+}
+// Kiểm tra
+console.log("Số lần xuất hiện của 'a' trong ['b','a','c','a']:", demKyTu(['b','a','c','a'], 'a'));
+console.log("Số lần xuất hiện của 'x' trong ['b','a','c','a']:", demKyTu(['b','a','c','a'], 'x'));
+    </script>
+</head>
+<body>
+    <button onclick="alertMessage()">Gọi hàm</button>
+</body>
+</html>

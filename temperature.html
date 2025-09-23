@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Class Demo</title>
+</head>
+<body>
+  <script>
+    class Temperature {
+      constructor(celsius) {
+        if (celsius < -273) {
+          throw new Error("Nhiệt độ không thể nhỏ hơn -273°C");
+        }
+        this.celsius = celsius;
+      }
+
+      // Getter & Setter
+      getCelsius() {
+        return this.celsius;
+      }
+      setCelsius(celsius) {
+        if (celsius < -273) {
+          throw new Error("Nhiệt độ không thể nhỏ hơn -273°C");
+        }
+        this.celsius = celsius;
+      }
+
+      // Chuyển đổi sang Fahrenheit
+      toFahrenheit() {
+        return this.celsius * 9 / 5 + 32;
+      }
+
+      // Chuyển đổi sang Kelvin
+      toKelvin() {
+        return this.celsius + 273.15;
+      }
+    }
+
+    // --- Kịch bản chương trình ---
+    let myTemp = new Temperature(25); // gán 25°C
+
+    document.write("Nhiệt độ: " + myTemp.getCelsius() + "°C<br>");
+    document.write("Fahrenheit: " + myTemp.toFahrenheit() + "°F<br>");
+    document.write("Kelvin: " + myTemp.toKelvin() + " K<br>");
+  </script>
+</body>
+</html>
