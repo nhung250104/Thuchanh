@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch & Lamp</title>
+</head>
+<body>
+    <h2>Mô phỏng công tắc và bóng đèn</h2>
+    <pre id="result"></pre>
+
+    <script>
+        class ElectricLamp {
+            constructor(status) {
+                this.status = status; // true = bật, false = tắt
+            }
+
+            getStatus() {
+                return this.status;
+            }
+        }
+
+        class SwitchButton {
+            constructor(lamp, status) {
+                this.status = status; // true = bật, false = tắt
+                this.lamp = lamp;     // kết nối với bóng đèn
+            }
+
+            connectToLamp(lamp) {
+                this.lamp = lamp;
+            }
+
+            switchOff() {
+                this.status = false;
+                this.lamp.status = false;
+            }
+
+            switchOn() {
+                this.status = true;
+                this.lamp.status = true;
+            }
+        }
+
+        // Hàm hiển thị ra màn hình
+        function log(message) {
+            document.getElementById("result").textContent += message + "\n";
+        }
+
+        // ------------------- CHẠY CHƯƠNG TRÌNH -------------------
+        let electricLamp_1 = new ElectricLamp(false);
+        let switchButton_1 = new SwitchButton(electricLamp_1, false);
+
+        log("Bắt đầu mô phỏng bật/tắt công tắc 10 lần:\n");
+
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 === 0) {
+                switchButton_1.switchOff();
+                log(`👉 Lần ${i}: Bóng đèn = ${electricLamp_1.getStatus() ? "BẬT" : "TẮT"}`);
+            } else {
+                switchButton_1.switchOn();
+                log(`👉 Lần ${i}: Bóng đèn = ${electricLamp_1.getStatus() ? "BẬT" : "TẮT"}`);
+            }
+        }
+
+        log("\n✅ Mô phỏng kết thúc!");
+    </script>
+</body>
+</html>

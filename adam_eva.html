@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Adam & Eva và Quả Táo</title>
+</head>
+<body>
+  <h2>Mô phỏng câu chuyện Adam và Eva</h2>
+  <pre id="output"></pre>
+
+  <script>
+    class Apple {
+      constructor() {
+        this._weight = 10; // khối lượng mặc định
+      }
+
+      getWeight() {
+        return this._weight;
+      }
+
+      decrease() {
+        if (this._weight > 0) {
+          this._weight -= 1;
+        }
+      }
+    }
+
+    class Human {
+      constructor(name, gender, weight) {
+        this._name = name;
+        this._gender = gender;
+        this._weight = weight;
+      }
+
+      getName() {
+        return this._name;
+      }
+
+      getGender() {
+        return this._gender;
+      }
+
+      getWeight() {
+        return this._weight;
+      }
+
+      say(words) {
+        log(`${this._name} nói: ${words}`);
+      }
+
+      eat(apple) {
+        if (apple.getWeight() > 0) {
+          apple.decrease();
+          this._weight += 1;
+          log(`${this._name} vừa ăn một miếng táo. 👉 Cân nặng: ${this._weight}, Táo còn: ${apple.getWeight()}`);
+        } else {
+          log("🍎 Táo đã hết, không thể ăn nữa!");
+        }
+      }
+
+      checkApple(apple) {
+        log(`Táo còn ${apple.getWeight()} đơn vị.`);
+      }
+    }
+
+    // Hàm in ra màn hình
+    function log(message) {
+      document.getElementById("output").textContent += message + "\n";
+    }
+
+    // ------------------- CHẠY CHƯƠNG TRÌNH -------------------
+    const apple = new Apple();
+    const adam = new Human("Adam", "Nam", 60);
+    const eva = new Human("Eva", "Nữ", 50);
+
+    adam.say("Xin chào, tôi là Adam.");
+    eva.say("Xin chào, tôi là Eva.");
+
+    let turn = 0;
+    while (apple.getWeight() > 0) {
+      if (turn % 2 === 0) {
+        adam.eat(apple);
+      } else {
+        eva.eat(apple);
+      }
+      turn++;
+    }
+
+    log("\n🍏 Táo đã hết. Câu chuyện kết thúc!");
+  </script>
+</body>
+</html>
