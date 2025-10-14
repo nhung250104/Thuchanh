@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Sách</title>
+</head>
+<body>
+  <h2>Quản lý Sách</h2>
+  <table id="bookTable">
+    <tr>
+        <th>Mã số sách</th>
+        <th>Tên sách</th>
+        <th>Năm xuất bản</th>
+        <th>Số quyển</th>    
+        <th>Tình trạng</th>
+    </tr>
+  </table>
+
+  <button onclick="addBook()">Thêm sách đã có</button>
+  <button onclick="newBook()">Thêm sách mới</button>
+  <button onclick="borrowBooks()">Mượn sách</button>
+  <button onclick="mostBooks()">Hiển thị sách nhiều nhất</button>
+
+<script>
+    let books = [
+        { ma: "12345", ten: "Toán", nam: 2000, soquyen: 3, tinhtrang: true },
+        { ma: "23456", ten: "Văn", nam: 1999, soquyen: 2, tinhtrang: true },
+        { ma: "37456", ten: "Tiếng Anh", nam: 1994, soquyen: 0, tinhtrang: false }
+    ];
+    function showbooks() {
+        const table = document.getElementById('bookTable');
+        table.innerHTML = `
+            <tr>
+                <th>Mã số sách</th>
+                <th>Tên sách</th>
+                <th>Năm xuất bản</th>
+                <th>Số quyển</th>    
+                <th>Tình trạng</th>
+            </tr>`;
+        for ( let b of books){
+            table.innerHTML += `
+            <tr>
+                <td>${b.ma}</td>
+                <td>${b.ten}</td>
+                <td>${b.nam}</td>
+                <td>${b.soquyen}</td>
+                <td>${b.tinhtrang ? "True" : "False"}</td>
+            </tr>`;
+        }
+    }
+    function addBook() {
+        let ma = prompt("Nhập mã số sách cần thêm:");
+        let found = false;
+        for (let b of books) {
+            if (b.ma === ma) {
+                found = true;
+                let soquyen = parseInt(prompt("Nhập số quyển cần thêm:"));
+                if (isNaN(soquyen) || soquyen <= 0) {
+                    alert("Số quyển không hợp lệ!");
+                    return;
+                }
+                b.soquyen += soquyen;
+                b.tinhtrang = true;
+                alert("Đã thêm thành công!");
+                showbooks();
+                return;
+            }
+            
+            }
+        }
+        if (!found) {
+            alert("Mã số sách không tồn tại!");
+            showbooks();
+        }
+    function newBook() {
+        let ma;
+        while (true) {
+            ma = prompt("Nhập mã số sách mới:");
+            if (ma === null) return;
+            if (/^[1-5][0-9]{4}$/.test(ma)) break;
+            alert("Mã sách không hợp lệ! Vui lòng nhập lại")
+            }
+        let ten;
+        while (true) {
+            ten = prompt("Nhập tên sách:");
+            if (ten === null) return;
+            if (ten.trim() !== "") break;
+            alert("Tên sách không được để trống! Vui lòng nhập lại")
+            }
+        let nam;
+        while (true) {
+            nam = parseInt(prompt("Nhập năm xuất bản:"));
+            if (isNaN(nam)) {
+                alert("Năm xuất bản không hợp lệ! Vui lòng nhập lại");
+                continue;
+            }
+            if (nam >= 1000 && nam <= 9999) break;
+            alert("Năm xuất bản phải có 4 chữ số")
+        }
+        let soquyen;
+        while (true) {
+            soquyen = parseInt(prompt("Nhập số quyển:"));
+            if (isNaN(soquyen) || soquyen < 0){
+                alert("Số quyển không hợp lệ ");
+            } else {
+                break;
+            }
+        }
+        let tinhtrang = soquyen > 0;
+        books.push({ ma, ten, nam, soquyen, tinhtrang });
+        alert("Đã thêm sách mới thành công!");
+        showbooks();
+    }
+    function borrowBooks() {
+        let ma = prompt("Nhập mã số sách cần mượn:");
+        let found = false;
+        for (let b of books) {
+            if (b.ma === ma) {
+                found = true;
+                if (b.soquyen <= 0) {
+                    alert("Sách hiện không có sẵn để mượn!");
+                    return;
+                }
+
+                let soMuon = parseInt(prompt(`Nhập số lượng muốn mượn (còn ${b.soquyen} quyển):`));
+
+                if (isNaN(soMuon) || soMuon <= 0) {
+                    alert("Số lượng mượn không hợp lệ!");
+                    return;
+                }
+
+                if (soMuon > b.soquyen) {
+                    alert(`Không đủ sách để mượn! Chỉ còn ${b.soquyen} quyển.`);
+                    return;
+                }
+
+                b.soquyen -= soMuon;
+                if (b.soquyen === 0) {
+                    b.tinhtrang = false;
+                }
+                alert("Mượn sách thành công!");
+                showbooks();
+                return;
+            }
+        }
+        if (!found) {
+            alert("Mã số sách không tồn tại!");
+        }
+        showbooks();
+    }
+    function mostBooks() {
+        if (books.length === 0) {
+            alert("Không có sách trong thư viện!");
+            return;
+        }
+        let maxBook = books[0];
+        for (let b of books) {
+            if (b.soquyen > maxBook.soquyen) {
+                maxBook = b;
+            }
+        }
+        alert(`Sách có nhiều quyển nhất là:\nMã số: ${maxBook.ma}\nTên sách: ${maxBook.ten}\nNăm xuất bản: ${maxBook.nam}\nSố quyển: ${maxBook.soquyen}\nTình trạng: ${maxBook.tinhtrang ? "True" : "False"}`);
+    }
+</script>
+    <script>
+        showbooks();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai1module1</title>
+</head>
+<body>
+    <script>
+        let n;
+        do {
+            n = parseInt(prompt("Nhập số phần tử của mảng (0 < n ≤ 50): "));
+            if (isNaN(n) || n <= 0 || n > 50) {
+                alert("Vui lòng nhập số nguyên > 0 và ≤ 50!");
+            }
+        } while (isNaN(n) || n <= 0 || n > 50);
+
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt(`Nhập phần tử thứ ${i}:`));
+        }
+
+        document.write("Mảng vừa nhập là: [" + arr.join(", ") + "]<br><br>");
+
+        let sum = 0;
+        let count = 0;
+        let phepTinh = "";
+
+        for (let i = 0; i < n; i += 2) { 
+            if (arr[i] % 2 !== 0) {      
+                sum += arr[i];
+                count++;
+                phepTinh += arr[i] + " + ";
+            }
+        }
+
+        if (count > 0) {
+            phepTinh = phepTinh.slice(0, -3);
+            let avg = sum / count;
+            document.write("Phép tính minh họa: (" + phepTinh + ") / " + count + " = " + avg);
+        } else {
+            document.write("Không có số lẻ ở vị trí chẵn.");
+        }
+    </script>
+</body>
+</html>

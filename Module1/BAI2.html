@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số thân thiết</title>
+</head>
+<body>
+    <h2>Kiểm tra cặp số thân thiết</h2>
+
+    <script>
+        function tongUoc(n) {
+            let sum = 0;
+            for (let i = 1; i <= n / 2; i++) {
+                if (n % i === 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+        function laCapThanThiet(a, b) {
+            return tongUoc(a) === b && tongUoc(b) === a;
+        }
+
+        let so1 = parseInt(prompt("Nhập số thứ nhất:"));
+        let so2 = parseInt(prompt("Nhập số thứ hai:"));
+
+        if (isNaN(so1) || isNaN(so2) || so1 <= 0 || so2 <= 0) {
+            document.write("Vui lòng nhập hai số nguyên dương hợp lệ!");
+        } else {
+            let ketQua = laCapThanThiet(so1, so2);
+            document.write(`<p>${so1}, ${so2} → ${ketQua}</p>`);
+        }
+    </script>
+</body>
+</html>
