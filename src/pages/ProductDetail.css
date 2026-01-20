@@ -1,0 +1,30 @@
+.detail-card {
+  max-width: 500px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detail-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.btn-back {
+  margin-top: 15px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background: #2563eb;
+}

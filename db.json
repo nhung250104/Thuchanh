@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "iPhone 12",
+      "description": "iPhone 12 mới 100%",
+      "price": 19000000
+    },
+    {
+      "id": "2",
+      "name": "iPhone 11",
+      "description": "iPhone 11 99%",
+      "price": 15000000
+    },
+    {
+      "id": "3",
+      "name": "Samsung Note 8",
+      "description": "Samsung flagship",
+      "price": 18000000
+    },
+    {
+      "id": "7ea9",
+      "name": "ip13",
+      "price": 15000000,
+      "description": "trắng"
+    }
+  ]
+}
